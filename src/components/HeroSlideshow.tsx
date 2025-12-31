@@ -162,53 +162,6 @@ const HeroSlideshow: React.FC<HeroSlideshowProps> = ({ addToCart }) => {
         </div>
       </div>
 
-      {/* Our Most Selling Items Section */}
-      <div className="bg-gradient-to-br from-beige-50 to-beige-100 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-times font-bold text-brown-800 mb-4">
-              Our Most Selling Items
-            </h2>
-            <p className="text-xl font-inter text-brown-600">
-              By Category
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {mostSellingItems.map((item, index) => (
-              <div
-                key={item.name}
-                className="flex flex-col items-center group cursor-pointer"
-                onClick={() => navigate(item.link)}
-              >
-                <div className="relative w-60 h-60 md:w-70 md:h-70 lg:w-80 lg:h-80 mb-4">
-                  <div className="w-full h-full rounded-full overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105 border-4 border-white">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-t from-brown-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <h3 className="text-2xl md:text-3xl font-inter font-semibold text-brown-800 text-center group-hover:text-amber-700 transition-colors duration-300">
-                  {item.name}
-                </h3>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <button
-              onClick={() => navigate('/products')}
-              className="bg-gradient-to-r from-amber-700 to-amber-800 hover:from-amber-800 hover:to-amber-900 text-white font-inter font-semibold py-4 px-8 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-            >
-              View All Categories
-            </button>
-          </div>
-        </div>
-      </div>
-
       {/* What People Like Most Section */}
       <div className="bg-white py-16" id="what-people-like-most">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -307,6 +260,53 @@ const HeroSlideshow: React.FC<HeroSlideshowProps> = ({ addToCart }) => {
               className="bg-gradient-to-r from-amber-700 to-amber-800 hover:from-amber-800 hover:to-amber-900 text-white font-inter font-semibold py-4 px-8 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               View All Products
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Our Most Selling Items Section */}
+      <div className="bg-gradient-to-br from-beige-50 to-beige-100 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-times font-bold text-brown-800 mb-4">
+              Our Most Selling Items
+            </h2>
+            <p className="text-xl font-inter text-brown-600">
+              By Category
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {mostSellingItems.map((item, index) => (
+              <div
+                key={item.name}
+                className="flex flex-col items-center group cursor-pointer"
+                onClick={() => navigate(item.link)}
+              >
+                <div className="relative w-60 h-60 md:w-70 md:h-70 lg:w-80 lg:h-80 mb-4">
+                  <div className="w-full h-full rounded-full overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105 border-4 border-white">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-t from-brown-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <h3 className="text-2xl md:text-3xl font-inter font-semibold text-brown-800 text-center group-hover:text-amber-700 transition-colors duration-300">
+                  {item.name}
+                </h3>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <button
+              onClick={() => navigate('/products')}
+              className="bg-gradient-to-r from-amber-700 to-amber-800 hover:from-amber-800 hover:to-amber-900 text-white font-inter font-semibold py-4 px-8 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
+              View All Categories
             </button>
           </div>
         </div>
