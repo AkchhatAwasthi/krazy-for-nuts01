@@ -18,6 +18,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './contexts/AuthContext';
 import { Product } from './data/products';
 import { GiftBasket } from './data/giftBaskets';
+import { checkEnvVars } from './lib/supabaseClient';
 import ChatbotWidget from './components/ChatbotWidget';
 import ForgotPasswordModal from './components/ForgotPasswordModal';
 import NewYearPopup from './components/NewYearPopup';
@@ -98,6 +99,9 @@ function App() {
 
   // Load cart from localStorage on component mount
   useEffect(() => {
+    // Check environment variables
+    checkEnvVars();
+
     const savedCart = localStorage.getItem('cart');
     if (savedCart) {
       try {
